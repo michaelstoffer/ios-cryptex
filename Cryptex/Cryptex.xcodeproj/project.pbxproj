@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D6716B8A228B26BE00C1A4CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716B89228B26BE00C1A4CE /* AppDelegate.swift */; };
-		D6716B8C228B26BE00C1A4CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716B8B228B26BE00C1A4CE /* ViewController.swift */; };
 		D6716B8F228B26BE00C1A4CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6716B8D228B26BE00C1A4CE /* Main.storyboard */; };
 		D6716B91228B26BE00C1A4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6716B90228B26BE00C1A4CE /* Assets.xcassets */; };
 		D6716B94228B26BE00C1A4CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6716B92228B26BE00C1A4CE /* LaunchScreen.storyboard */; };
+		D6716B9C228B2A2400C1A4CE /* CryptexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716B9B228B2A2400C1A4CE /* CryptexViewController.swift */; };
+		D6716B9F228B370A00C1A4CE /* Cryptex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716B9E228B370A00C1A4CE /* Cryptex.swift */; };
+		D6716BA2228B375D00C1A4CE /* CryptexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716BA1228B375D00C1A4CE /* CryptexController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D6716B86228B26BE00C1A4CE /* Cryptex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6716B89228B26BE00C1A4CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6716B8B228B26BE00C1A4CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D6716B8E228B26BE00C1A4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6716B90228B26BE00C1A4CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6716B93228B26BE00C1A4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6716B95228B26BE00C1A4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6716B9B228B2A2400C1A4CE /* CryptexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptexViewController.swift; sourceTree = "<group>"; };
+		D6716B9E228B370A00C1A4CE /* Cryptex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptex.swift; sourceTree = "<group>"; };
+		D6716BA1228B375D00C1A4CE /* CryptexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptexController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		D6716B88228B26BE00C1A4CE /* Cryptex */ = {
 			isa = PBXGroup;
 			children = (
+				D6716B9D228B36FD00C1A4CE /* Models */,
+				D6716BA0228B374800C1A4CE /* Model Controllers */,
 				D6716B89228B26BE00C1A4CE /* AppDelegate.swift */,
-				D6716B8B228B26BE00C1A4CE /* ViewController.swift */,
-				D6716B8D228B26BE00C1A4CE /* Main.storyboard */,
+				D6716BA3228B3B9300C1A4CE /* View Controllers */,
+				D6716BA4228B3B9C00C1A4CE /* Storyboards */,
 				D6716B90228B26BE00C1A4CE /* Assets.xcassets */,
-				D6716B92228B26BE00C1A4CE /* LaunchScreen.storyboard */,
 				D6716B95228B26BE00C1A4CE /* Info.plist */,
 			);
 			path = Cryptex;
+			sourceTree = "<group>";
+		};
+		D6716B9D228B36FD00C1A4CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D6716B9E228B370A00C1A4CE /* Cryptex.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D6716BA0228B374800C1A4CE /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6716BA1228B375D00C1A4CE /* CryptexController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		D6716BA3228B3B9300C1A4CE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6716B9B228B2A2400C1A4CE /* CryptexViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D6716BA4228B3B9C00C1A4CE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D6716B92228B26BE00C1A4CE /* LaunchScreen.storyboard */,
+				D6716B8D228B26BE00C1A4CE /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6716B8C228B26BE00C1A4CE /* ViewController.swift in Sources */,
+				D6716B9C228B2A2400C1A4CE /* CryptexViewController.swift in Sources */,
+				D6716BA2228B375D00C1A4CE /* CryptexController.swift in Sources */,
+				D6716B9F228B370A00C1A4CE /* Cryptex.swift in Sources */,
 				D6716B8A228B26BE00C1A4CE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
