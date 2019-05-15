@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Cryptex {
+struct Cryptex: Codable {
     var password: String
     var hint: String
 }
