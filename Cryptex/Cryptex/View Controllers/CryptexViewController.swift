@@ -23,6 +23,7 @@ class CryptexViewController: UIViewController {
                    "Q", "R", "S", "T",
                    "U", "V", "W", "X",
                    "Y", "Z"]
+    var countdownTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,29 @@ class CryptexViewController: UIViewController {
     
     // MARK: - IBActions and Methods
     @IBAction func unlockButtonTapped(_ sender: UIButton) {
+        if self.hasMatchingPassword() {
+            print("Yay! You solved it!")
+            self.reset()
+        }
+    }
+    
+    private func reset() {
+        self.countdownTimer?.invalidate()
+        self.countdownTimer = nil
+        
+        self.countdownTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: false, block: { timer in
+            print("The timer has finished")
+        })
+        
+        for index in 0...(self.cryptexPickerView!.numberOfComponents - 1) {
+            self.cryptexPickerView!.selectRow(0, inComponent: index, animated: true)
+        }
+    }
+    
+    private func newCryptexAndReset() {
+        self.cryptexController.randomCryptex()
+        self.updateViews()
+        self.reset()
     }
     
     private func updateViews() {
@@ -56,5 +80,14 @@ extension CryptexViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.letters[row]
+    }
+    
+    func hasMatchingPassword() -> Bool {
+        var titles: [String] = []
+        for index in 0...(self.cryptexPickerView!.numberOfComponents - 1) {
+            titles.append(self.letters[self.cryptexPickerView!.selectedRow(inComponent: index)])
+        }
+        
+        return titles.joined() == self.cryptexController.currentCryptex?.password.uppercased()
     }
 }
