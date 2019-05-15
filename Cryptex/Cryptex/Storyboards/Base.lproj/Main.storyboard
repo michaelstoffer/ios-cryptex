@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PK7-8R-jTN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f0I-Vd-0wC">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -49,6 +49,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vV7-mc-gaN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="P0L-M6-IAJ">
+                        <barButtonItem key="rightBarButtonItem" title="Add Cryptex" id="UoV-cB-aDx">
+                            <connections>
+                                <segue destination="RjF-s8-amZ" kind="show" identifier="ToAddCryptex" id="vRY-xu-Q22"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cryptexPickerView" destination="ocx-Jg-XCS" id="kBG-k6-PcR"/>
                         <outlet property="hintLabel" destination="Srz-Pe-6pW" id="gJf-PM-WKY"/>
@@ -57,7 +64,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7A-dl-Kcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200" y="94"/>
+            <point key="canvasLocation" x="1110.144927536232" y="93.75"/>
+        </scene>
+        <!--Add Cryptex View Controller-->
+        <scene sceneID="y2J-7z-sIw">
+            <objects>
+                <viewController id="RjF-s8-amZ" customClass="AddCryptexViewController" customModule="Cryptex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eij-Oi-ELQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v12-fl-5vE">
+                                <rect key="frame" x="16" y="395" width="382" height="106"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your hint..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wM9-jV-jQr">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-Ig-1li">
+                                        <rect key="frame" x="0.0" y="38" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1m7-xw-cTi">
+                                        <rect key="frame" x="0.0" y="76" width="382" height="30"/>
+                                        <state key="normal" title="Add Cryptex"/>
+                                        <connections>
+                                            <action selector="addCryptexButtonTapped:" destination="RjF-s8-amZ" eventType="touchUpInside" id="0jP-ci-kwt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v12-fl-5vE" firstAttribute="centerY" secondItem="Eij-Oi-ELQ" secondAttribute="centerY" id="1g1-Iq-mZF"/>
+                            <constraint firstItem="Jr5-IB-lYa" firstAttribute="trailing" secondItem="v12-fl-5vE" secondAttribute="trailing" constant="16" id="49w-n0-MNB"/>
+                            <constraint firstItem="v12-fl-5vE" firstAttribute="leading" secondItem="Jr5-IB-lYa" secondAttribute="leading" constant="16" id="6pA-SO-485"/>
+                            <constraint firstItem="v12-fl-5vE" firstAttribute="centerX" secondItem="Eij-Oi-ELQ" secondAttribute="centerX" id="TaG-Hk-OYy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jr5-IB-lYa"/>
+                    </view>
+                    <connections>
+                        <outlet property="hintTextField" destination="wM9-jV-jQr" id="cJT-Eg-Pkf"/>
+                        <outlet property="passwordTextField" destination="ox5-Ig-1li" id="epO-QG-vPQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loZ-gc-RTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1867" y="94"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aI1-Io-Hgk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f0I-Vd-0wC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iKI-lP-O1v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PK7-8R-jTN" kind="relationship" relationship="rootViewController" id="V8y-hk-Ops"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOh-79-5p2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="94"/>
         </scene>
     </scenes>
 </document>

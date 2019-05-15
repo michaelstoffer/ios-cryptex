@@ -14,6 +14,7 @@
 		D6716B9C228B2A2400C1A4CE /* CryptexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716B9B228B2A2400C1A4CE /* CryptexViewController.swift */; };
 		D6716B9F228B370A00C1A4CE /* Cryptex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716B9E228B370A00C1A4CE /* Cryptex.swift */; };
 		D6716BA2228B375D00C1A4CE /* CryptexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716BA1228B375D00C1A4CE /* CryptexController.swift */; };
+		D6716BA6228BBAF300C1A4CE /* AddCryptexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6716BA5228BBAF300C1A4CE /* AddCryptexViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D6716B9B228B2A2400C1A4CE /* CryptexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptexViewController.swift; sourceTree = "<group>"; };
 		D6716B9E228B370A00C1A4CE /* Cryptex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptex.swift; sourceTree = "<group>"; };
 		D6716BA1228B375D00C1A4CE /* CryptexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptexController.swift; sourceTree = "<group>"; };
+		D6716BA5228BBAF300C1A4CE /* AddCryptexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCryptexViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				D6716B9B228B2A2400C1A4CE /* CryptexViewController.swift */,
+				D6716BA5228BBAF300C1A4CE /* AddCryptexViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6716BA6228BBAF300C1A4CE /* AddCryptexViewController.swift in Sources */,
 				D6716B9C228B2A2400C1A4CE /* CryptexViewController.swift in Sources */,
 				D6716BA2228B375D00C1A4CE /* CryptexController.swift in Sources */,
 				D6716B9F228B370A00C1A4CE /* Cryptex.swift in Sources */,

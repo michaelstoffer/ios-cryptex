@@ -36,9 +36,15 @@ class CryptexViewController: UIViewController {
     // MARK: - IBActions and Methods
     @IBAction func unlockButtonTapped(_ sender: UIButton) {
         if self.hasMatchingPassword() {
-            print("Yay! You solved it!")
-            self.reset()
+            self.presentCorrectPasswordAlert()
+        } else {
+            self.presentIncorrectPasswordAlert()
         }
+    }
+    
+    private func updateViews() {
+        self.hintLabel.text = self.cryptexController.currentCryptex?.hint
+        self.cryptexPickerView.reloadAllComponents()
     }
     
     private func reset() {
@@ -46,7 +52,7 @@ class CryptexViewController: UIViewController {
         self.countdownTimer = nil
         
         self.countdownTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: false, block: { timer in
-            print("The timer has finished")
+            self.presentNoTimeRemainingAlert()
         })
         
         for index in 0...(self.cryptexPickerView!.numberOfComponents - 1) {
@@ -56,13 +62,45 @@ class CryptexViewController: UIViewController {
     
     private func newCryptexAndReset() {
         self.cryptexController.randomCryptex()
-        self.updateViews()
         self.reset()
+        self.updateViews()
     }
     
-    private func updateViews() {
-        self.hintLabel.text = self.cryptexController.currentCryptex?.hint
-        self.cryptexPickerView.reloadAllComponents()
+    // MARK: - Alerts
+    private func presentCorrectPasswordAlert() {
+        let alert = UIAlertController(title: "Congratulations!", message: "You guessed the password correctly!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "New Cryptex", style: .default) { alert in
+            self.newCryptexAndReset()
+        })
+        self.present(alert, animated: true)
+    }
+    
+    private func presentIncorrectPasswordAlert() {
+        let alert = UIAlertController(title: "Uh Oh!", message: "You guessed the password incorrectly.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Keep Guessing", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "New Cryptex", style: .default) { alert in
+            self.newCryptexAndReset()
+        })
+        self.present(alert, animated: true)
+    }
+    
+    private func presentNoTimeRemainingAlert() {
+        let alert = UIAlertController(title: "Uh Oh!", message: "You have ran out of time.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Reset Timer", style: .default) { alert in
+            self.reset()
+        })
+        alert.addAction(UIAlertAction(title: "New Cryptex", style: .default) { alert in
+            self.newCryptexAndReset()
+        })
+        self.present(alert, animated: true)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToAddCryptex" {
+            guard let AddCryptexVC = segue.destination as? AddCryptexViewController else { return }
+            AddCryptexVC.cryptexController = self.cryptexController
+        }
     }
 }
 
